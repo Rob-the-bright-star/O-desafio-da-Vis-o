@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <title>The Eye</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="game" class="game-shell" aria-label="The Eye, jogo de reflexos visuais">
+    <div class="grain" aria-hidden="true"></div>
+
+    <section class="arena" id="arena" aria-label="Área de jogo">
+      <div class="warning warning-up" data-side="Up" aria-hidden="true"></div>
+      <div class="warning warning-right" data-side="Right" aria-hidden="true"></div>
+      <div class="warning warning-down" data-side="Down" aria-hidden="true"></div>
+      <div class="warning warning-left" data-side="Left" aria-hidden="true"></div>
+
+      <div class="hud" id="hud" hidden>
+        <div class="hud-left">
+          <span class="eyebrow">DIFFICULTY</span>
+          <strong id="difficultyLabel">EASY</strong>
+        </div>
+        <div class="hud-center" aria-live="polite">
+          <span class="eyebrow">ROUND</span>
+          <strong><span id="roundNow">0</span><i>/</i><span id="roundTotal">20</span></strong>
+        </div>
+        <div class="hud-right">
+          <span class="eyebrow">LIVES</span>
+          <strong id="livesText">♥ ♥ ♥</strong>
+        </div>
+      </div>
+
+      <div class="eye-stage" id="eyeStage" aria-label="Olho do jogador apontando para cima">
+        <img class="eye-glow" src="assets/eyeshine.svg" alt="" draggable="false">
+        <div class="eye-rotator" id="eyeRotator">
+          <img class="eye-white" src="assets/eye.svg" alt="" draggable="false">
+          <div class="iris" id="iris" aria-hidden="true">
+            <img src="assets/eye-look.svg" alt="" draggable="false">
+          </div>
+        </div>
+      </div>
+
+      <div class="center-message" id="centerMessage" aria-live="polite">Escolha uma dificuldade</div>
+
+      <div class="controls" id="controls" aria-label="Controles direcionais">
+        <button class="direction direction-up" data-direction="Up" aria-label="Olhar para cima" title="W / ↑"><span>↑</span><small>W</small></button>
+        <button class="direction direction-left" data-direction="Left" aria-label="Olhar para a esquerda" title="A / ←"><span>←</span><small>A</small></button>
+        <button class="direction direction-down" data-direction="Down" aria-label="Olhar para baixo" title="S / ↓"><span>↓</span><small>S</small></button>
+        <button class="direction direction-right" data-direction="Right" aria-label="Olhar para a direita" title="D / →"><span>→</span><small>D</small></button>
+      </div>
+
+      <section class="menu" id="menu" aria-labelledby="gameTitle">
+        <div class="menu-mark" aria-hidden="true"><span></span></div>
+        <p class="eyebrow menu-kicker">VISUAL REFLEX TEST</p>
+        <h1 id="gameTitle">THE <em>EYE</em></h1>
+        <p class="subtitle">Veja o sinal. Vire. Sobreviva.</p>
+        <div class="difficulty-list" aria-label="Escolher dificuldade">
+          <button class="difficulty easy" data-difficulty="Easy"><span class="difficulty-name">Easy</span><span class="difficulty-meta">20 ataques</span><span class="difficulty-arrow">↗</span></button>
+          <button class="difficulty medium" data-difficulty="Medium"><span class="difficulty-name">Medium</span><span class="difficulty-meta">30 ataques</span><span class="difficulty-arrow">↗</span></button>
+          <button class="difficulty hard" data-difficulty="Hard"><span class="difficulty-name">Hard</span><span class="difficulty-meta">65 ataques</span><span class="difficulty-arrow">↗</span></button>
+          <button class="difficulty impossible locked" id="impossibleButton" data-difficulty="Impossible" disabled><span class="difficulty-name">Impossible <b class="lock-icon">⌑</b></span><span class="difficulty-meta" id="impossibleMeta">Complete Hard para desbloquear</span><span class="difficulty-arrow">↗</span></button>
+        </div>
+        <div class="menu-footer"><span>W A S D</span><i></i><span>OU TOQUE NAS SETAS</span></div>
+      </section>
+
+      <section class="result-panel" id="resultPanel" hidden aria-live="polite">
+        <p class="eyebrow" id="resultEyebrow">RUN COMPLETE</p>
+        <h2 id="resultTitle">Você conseguiu.</h2>
+        <p id="resultDescription">Seus reflexos venceram a escuridão.</p>
+        <button class="return-button" id="returnButton">VOLTAR AO MENU <span>↗</span></button>
+      </section>
+
+      <div class="flash" id="flash" aria-hidden="true"></div>
+      <div class="status-note" id="statusNote" aria-live="polite"></div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
