@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <radialGradient id="irisTexture" cx="44%" cy="38%" r="68%">
+      <stop offset="0" stop-color="#fff" stop-opacity=".23"/>
+      <stop offset=".58" stop-color="#fff" stop-opacity=".07"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".24"/>
+    </radialGradient>
+  </defs>
+  <!-- Transparent outside: the colored iris itself is tinted by CSS. -->
+  <circle cx="50" cy="50" r="47" fill="url(#irisTexture)"/>
+  <g stroke="#fff" stroke-opacity=".23" stroke-width="2" stroke-linecap="round">
+    <path d="M50 8v11 M65 11l-4 11 M79 20l-8 9 M89 35l-11 5 M92 50H80 M88 66l-10-4 M78 80l-8-9 M64 89l-4-11 M50 92V80 M35 89l4-11 M21 80l8-9 M11 65l11-4 M8 50h12 M12 35l11 5 M22 21l8 8 M36 11l4 11"/>
+  </g>
+  <circle cx="50" cy="50" r="20" fill="#07080b" stroke="#000" stroke-opacity=".8" stroke-width="3"/>
+  <ellipse cx="43" cy="41" rx="5" ry="3" fill="#fff" opacity=".78"/>
+  <circle cx="58" cy="59" r="2.5" fill="#fff" opacity=".15"/>
+</svg>
